@@ -18,6 +18,7 @@
             <tr>
                 <th>Roles</th>
                 <td>{{ user.roles ? user.roles|json_encode : '' }}</td>
+                {% dump(user.roles) %}
             </tr>
             <tr>
                 <th>Password</th>

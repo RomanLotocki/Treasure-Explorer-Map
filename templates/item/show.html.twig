@@ -13,28 +13,33 @@
             </tr>
             <tr>
                 <th>Name</th>
-                <td>{{ item.name }}</td>
+                <td>{{ item.itemName }}</td>
             </tr>
             <tr>
                 <th>Image</th>
-                <td>{{ item.image }}</td>
+                <td>{{ item.itemImage }}</td>
             </tr>
             <tr>
                 <th>Item_description</th>
                 <td>{{ item.itemDescription }}</td>
             </tr>
+            {# Display only if not null #}
+            {% if item.discoveryDescription != null %}
             <tr>
                 <th>Discovery_description</th>
                 <td>{{ item.discoveryDescription }}</td>
             </tr>
+            {% endif %}
             <tr>
                 <th>Creation_date</th>
                 <td>{{ item.creationDate }}</td>
             </tr>
+            {% if item.discoveryDate != null %}
             <tr>
                 <th>Discovery_date</th>
                 <td>{{ item.discoveryDate }}</td>
             </tr>
+            {% endif %}
             <tr>
                 <th>Item_latitude</th>
                 <td>{{ item.itemLatitude }}</td>

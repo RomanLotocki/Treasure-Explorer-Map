@@ -1,0 +1,11 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Ajout site{% endblock %}
+
+{% block body %}
+    <h1>ajout d'un nouveau objet</h1>
+
+    {{ include('site/_form.html.twig') }}
+
+    <a class="btn btn-primary mt-2" href="{{ path('app_site_index') }}">retour à la liste</a>
+{% endblock %}

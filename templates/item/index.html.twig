@@ -1,0 +1,37 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Liste des objets{% endblock %}
+
+{% block body %}
+    <h1>liste des objets</h1>
+    <a class="btn btn-success" href="{{ path('app_item_new') }}">ajouter un objet</a>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>no</th>
+                <th>nom</th>
+                <th>date de création</th>
+                <th>pays d'origine</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for item in items %}
+            <tr>
+                <td>{{ item.id }}</td>
+                <td>{{ item.itemName }}</td>
+                <td>{{ item.creationDate }}</td>
+                <td>{{ item.itemCountry }}</td>
+                <td>
+                    <a class="btn btn-primary" href="{{ path('app_item_show', {'id': item.id}) }}">détails</a>
+                    <a class="btn btn-warning" href="{{ path('app_item_edit', {'id': item.id}) }}">modifier</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="15">pas d'objets trouvés</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+{% endblock %}

@@ -20,12 +20,12 @@ class Item
     /**
      * @ORM\Column(type="string", length=255)
      */
-    private $name;
+    private $item_name;
 
     /**
      * @ORM\Column(type="string", length=255)
      */
-    private $image;
+    private $item_image;
 
     /**
      * @ORM\Column(type="text")
@@ -92,26 +92,26 @@ class Item
         return $this->id;
     }
 
-    public function getName(): ?string
+    public function getItemName(): ?string
     {
-        return $this->name;
+        return $this->item_name;
     }
 
-    public function setName(string $name): self
+    public function setItemName(string $item_name): self
     {
-        $this->name = $name;
+        $this->item_name = $item_name;
 
         return $this;
     }
 
-    public function getImage(): ?string
+    public function getItemImage(): ?string
     {
-        return $this->image;
+        return $this->item_image;
     }
 
-    public function setImage(string $image): self
+    public function setItemImage(string $item_image): self
     {
-        $this->image = $image;
+        $this->item_image = $item_image;
 
         return $this;
     }

@@ -3,17 +3,17 @@
 {% block title %}Liste des utilisateurs{% endblock %}
 
 {% block body %}
-    <h1>Liste des utilisateurs</h1>
-    <a class="btn btn-success" href="{{ path('app_user_new') }}">Ajouter un utilisateur</a>
+    <h1>liste des utilisateurs</h1>
+    <a class="btn btn-success" href="{{ path('app_user_new') }}">ajouter un utilisateur</a>
 
     <table class="table">
         <thead>
             <tr>
-                <th>Id</th>
-                <th>Email</th>
-                <th>Role</th>
-                <th>Prénom</th>
-                <th>Nom</th>
+                <th>no</th>
+                <th>email</th>
+                <th>role</th>
+                <th>prénom</th>
+                <th>nom</th>
                 <th>actions</th>
             </tr>
         </thead>
@@ -26,13 +26,13 @@
                 <td>{{ user.firstName }}</td>
                 <td>{{ user.lastName }}</td>
                 <td>
-                    <a class="btn btn-primary" href="{{ path('app_user_show', {'id': user.id}) }}">Détails</a>
-                    <a class="btn btn-warning" href="{{ path('app_user_edit', {'id': user.id}) }}">Modifier</a>
+                    <a class="btn btn-primary" href="{{ path('app_user_show', {'id': user.id}) }}">détails</a>
+                    <a class="btn btn-warning" href="{{ path('app_user_edit', {'id': user.id}) }}">modifier</a>
                 </td>
             </tr>
         {% else %}
             <tr>
-                <td colspan="7">Aucun utilisateur trouvé</td>
+                <td colspan="7">aucun utilisateur trouvé</td>
             </tr>
         {% endfor %}
         </tbody>

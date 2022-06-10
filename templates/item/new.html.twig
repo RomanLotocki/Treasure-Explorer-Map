@@ -1,11 +1,11 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}New Item{% endblock %}
+{% block title %}Ajout objet{% endblock %}
 
 {% block body %}
-    <h1>Create new Item</h1>
+    <h1>ajout d'un nouvel objet</h1>
 
     {{ include('item/_form.html.twig') }}
 
-    <a class="btn btn-primary mt-2" href="{{ path('app_item_index') }}">back to list</a>
+    <a class="btn btn-primary mt-2" href="{{ path('app_item_index') }}">retour à la liste</a>
 {% endblock %}

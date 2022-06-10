@@ -8,47 +8,47 @@
     <table class="table">
         <tbody>
             <tr>
-                <th>Id</th>
+                <th>no</th>
                 <td>{{ site.id }}</td>
             </tr>
             <tr>
-                <th>Name</th>
+                <th>nom</th>
                 <td>{{ site.name }}</td>
             </tr>
             <tr>
-                <th>Image</th>
+                <th>lien de l'image</th>
                 <td>{{ site.image }}</td>
             </tr>
             <tr>
-                <th>Site_description</th>
+                <th>description du site</th>
                 <td>{{ site.siteDescription }}</td>
             </tr>
             <tr>
-                <th>Site_culture</th>
+                <th>culture ou période</th>
                 <td>{{ site.siteCulture }}</td>
             </tr>
             <tr>
-                <th>Site_country</th>
+                <th>pays</th>
                 <td>{{ site.siteCountry }}</td>
             </tr>
             <tr>
-                <th>Site_latitude</th>
+                <th>latitude</th>
                 <td>{{ site.siteLatitude }}</td>
             </tr>
             <tr>
-                <th>Site_longitude</th>
+                <th>longitude</th>
                 <td>{{ site.siteLongitude }}</td>
             </tr>
             <tr>
-                <th>Site_url</th>
+                <th>lien du site officiel</th>
                 <td>{{ site.siteUrl }}</td>
             </tr>
         </tbody>
     </table>
 
-    <a href="{{ path('app_site_index') }}">back to list</a>
+    <a class="btn btn-primary mb-2" href="{{ path('app_site_index') }}">retour à la liste</a>
 
-    <a href="{{ path('app_site_edit', {'id': site.id}) }}">edit</a>
+    <a class="btn btn-warning mb-2" href="{{ path('app_site_edit', {'id': site.id}) }}">modifier</a>
 
     {{ include('site/_delete_form.html.twig') }}
 {% endblock %}

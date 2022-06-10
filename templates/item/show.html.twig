@@ -1,79 +1,79 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Item{% endblock %}
+{% block title %}Détails objet{% endblock %}
 
 {% block body %}
-    <h1>Item</h1>
+    <h1>{{item.itemName}}</h1>
 
     <table class="table">
         <tbody>
             <tr>
-                <th>Id</th>
+                <th>no</th>
                 <td>{{ item.id }}</td>
             </tr>
             <tr>
-                <th>Name</th>
+                <th>nom</th>
                 <td>{{ item.itemName }}</td>
             </tr>
             <tr>
-                <th>Image</th>
+                <th>lien de l'image</th>
                 <td>{{ item.itemImage }}</td>
             </tr>
             <tr>
-                <th>Item_description</th>
+                <th>description de l'objet</th>
                 <td>{{ item.itemDescription }}</td>
             </tr>
             {# Display only if not null #}
             {% if item.discoveryDescription != null %}
             <tr>
-                <th>Discovery_description</th>
+                <th>description de la découverte</th>
                 <td>{{ item.discoveryDescription }}</td>
             </tr>
             {% endif %}
             <tr>
-                <th>Creation_date</th>
+                <th>date de création</th>
                 <td>{{ item.creationDate }}</td>
             </tr>
             {% if item.discoveryDate != null %}
             <tr>
-                <th>Discovery_date</th>
+                <th>date de découverte</th>
                 <td>{{ item.discoveryDate }}</td>
             </tr>
             {% endif %}
             <tr>
-                <th>Item_latitude</th>
+                <th>latitude</th>
                 <td>{{ item.itemLatitude }}</td>
             </tr>
             <tr>
-                <th>Item_longitude</th>
+                <th>longitude</th>
                 <td>{{ item.itemLongitude }}</td>
             </tr>
             <tr>
-                <th>Item_country</th>
+                <th>pays</th>
                 <td>{{ item.itemCountry }}</td>
             </tr>
             <tr>
-                <th>Item_culture</th>
+                <th>culture ou période</th>
                 <td>{{ item.itemCulture }}</td>
             </tr>
             <tr>
-                <th>Item_materials</th>
+                <th>matériaux</th>
                 <td>{{ item.itemMaterials }}</td>
             </tr>
             <tr>
-                <th>Item_conservation_site</th>
+                <th>lieu de conservation</th>
                 <td>{{ item.itemConservationSite }}</td>
             </tr>
             <tr>
-                <th>Item_conservation_site_url</th>
+                <th>lien du musée</th>
                 <td>{{ item.itemConservationSiteUrl }}</td>
             </tr>
         </tbody>
     </table>
 
-    <a href="{{ path('app_item_index') }}">back to list</a>
+    <a class="btn btn-primary mb-2" href="{{ path('app_item_index') }}">retour à la liste</a>
 
-    <a href="{{ path('app_item_edit', {'id': item.id}) }}">edit</a>
+    <a class="btn btn-warning mb-2" href="{{ path('app_item_edit', {'id': item.id}) }}">modifier</a>
 
     {{ include('item/_delete_form.html.twig') }}
 {% endblock %}

@@ -1,43 +1,43 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}User{% endblock %}
+{% block title %}Utilisateur{% endblock %}
 
 {% block body %}
-    <h1>User</h1>
+    <h1>{{ user.firstName }} {{ user.lastName }}</h1>
 
     <table class="table">
         <tbody>
             <tr>
-                <th>Id</th>
+                <th>no</th>
                 <td>{{ user.id }}</td>
             </tr>
             <tr>
-                <th>Email</th>
+                <th>email</th>
                 <td>{{ user.email }}</td>
             </tr>
             <tr>
-                <th>Roles</th>
+                <th>role</th>
                 <td>{{ user.roles ? user.roles|json_encode : '' }}</td>
                 {% dump(user.roles) %}
             </tr>
             <tr>
-                <th>Password</th>
+                <th>mot de passe</th>
                 <td>{{ user.password }}</td>
             </tr>
             <tr>
-                <th>FirstName</th>
+                <th>prénom</th>
                 <td>{{ user.firstName }}</td>
             </tr>
             <tr>
-                <th>LastName</th>
+                <th>nom</th>
                 <td>{{ user.lastName }}</td>
             </tr>
         </tbody>
     </table>
 
-    <a href="{{ path('app_user_index') }}">back to list</a>
+    <a class="btn btn-primary mb-2" href="{{ path('app_user_index') }}">retour à la liste</a>
 
-    <a href="{{ path('app_user_edit', {'id': user.id}) }}">edit</a>
+    <a class="btn btn-warning mb-2" href="{{ path('app_user_edit', {'id': user.id}) }}">modifier</a>
 
     {{ include('user/_delete_form.html.twig') }}
 {% endblock %}

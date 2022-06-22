@@ -4,6 +4,7 @@ namespace App\Entity;
 
 use App\Repository\ItemRepository;
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Serializer\Annotation\Groups;
 
 /**
  * @ORM\Entity(repositoryClass=ItemRepository::class)
@@ -14,11 +15,13 @@ class Item
      * @ORM\Id
      * @ORM\GeneratedValue
      * @ORM\Column(type="integer")
+     * @Groups("browse_items")
      */
     private $id;
 
     /**
      * @ORM\Column(type="string", length=255)
+     * @Groups("browse_items")
      */
     private $item_name;
 
@@ -29,6 +32,7 @@ class Item
 
     /**
      * @ORM\Column(type="text")
+     * @Groups("browse_items")
      */
     private $item_description;
 
@@ -49,11 +53,13 @@ class Item
 
     /**
      * @ORM\Column(type="float")
+     * @Groups("browse_items")
      */
     private $item_latitude;
 
     /**
      * @ORM\Column(type="float")
+     * @Groups("browse_items")
      */
     private $item_longitude;
 

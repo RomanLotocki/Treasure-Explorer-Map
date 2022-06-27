@@ -6,6 +6,7 @@ use App\Repository\SiteRepository;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Serializer\Annotation\Groups;
 
 /**
  * @ORM\Entity(repositoryClass=SiteRepository::class)
@@ -16,51 +17,66 @@ class Site
      * @ORM\Id
      * @ORM\GeneratedValue
      * @ORM\Column(type="integer")
+     * @Groups("browse_sites")
+     * @Groups("read_site")
      */
     private $id;
 
     /**
      * @ORM\Column(type="string", length=255)
+     * @Groups("browse_sites")
+     * @Groups("read_site")
      */
     private $name;
 
     /**
      * @ORM\Column(type="string", length=255)
+     * @Groups("read_site")
      */
     private $image;
 
     /**
      * @ORM\Column(type="text")
+     * @Groups("browse_sites")
+     * @Groups("read_site")
      */
     private $site_description;
 
     /**
      * @ORM\Column(type="string", length=100)
+     * @Groups("read_site")
      */
     private $site_culture;
 
     /**
      * @ORM\Column(type="string", length=100)
+     * @Groups("read_site")
      */
     private $site_country;
 
     /**
      * @ORM\Column(type="float")
+     * @Groups("browse_sites")
+     * @Groups("read_site")
      */
     private $site_latitude;
 
     /**
      * @ORM\Column(type="float")
+     * @Groups("browse_sites")
+     * @Groups("read_site")
      */
     private $site_longitude;
 
     /**
      * @ORM\Column(type="string", length=255, nullable=true)
+     * @Groups("read_site")
      */
     private $site_url;
 
     /**
      * @ORM\OneToMany(targetEntity=Item::class, mappedBy="site")
+     * @Groups("read_site")
      */
     private $items;
 

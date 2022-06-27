@@ -16,80 +16,95 @@ class Item
      * @ORM\GeneratedValue
      * @ORM\Column(type="integer")
      * @Groups("browse_items")
+     * @Groups("read_item")
      */
     private $id;
 
     /**
      * @ORM\Column(type="string", length=255)
      * @Groups("browse_items")
+     * @Groups("read_item")
      */
     private $item_name;
 
     /**
      * @ORM\Column(type="string", length=255)
+     * @Groups("read_item")
      */
     private $item_image;
 
     /**
      * @ORM\Column(type="text")
      * @Groups("browse_items")
+     * @Groups("read_item")
      */
     private $item_description;
 
     /**
      * @ORM\Column(type="text", nullable=true)
+     * @Groups("read_item")
      */
     private $discovery_description;
 
     /**
      * @ORM\Column(type="string", length=255)
+     * @Groups("read_item")
      */
     private $creation_date;
 
     /**
      * @ORM\Column(type="string", length=255, nullable=true)
+     * @Groups("read_item")
      */
     private $discovery_date;
 
     /**
      * @ORM\Column(type="float")
      * @Groups("browse_items")
+     * @Groups("read_item")
      */
     private $item_latitude;
 
     /**
      * @ORM\Column(type="float")
      * @Groups("browse_items")
+     * @Groups("read_item")
      */
     private $item_longitude;
 
     /**
      * @ORM\Column(type="string", length=100)
+     * @Groups("read_item")
      */
     private $item_country;
 
     /**
      * @ORM\Column(type="string", length=100)
+     * @Groups("read_item")
      */
     private $item_culture;
 
     /**
      * @ORM\Column(type="string", length=255, nullable=true)
+     * @Groups("read_item")
      */
     private $item_materials;
 
     /**
      * @ORM\Column(type="string", length=255, nullable=true)
+     * @Groups("read_item")
      */
     private $item_conservation_site;
 
     /**
      * @ORM\Column(type="string", length=255, nullable=true)
+     * @Groups("read_item")
      */
     private $item_conservation_site_url;
 
     /**
      * @ORM\ManyToOne(targetEntity=Site::class, inversedBy="items")
+     * @Groups("read_item")
      */
     private $site;
 

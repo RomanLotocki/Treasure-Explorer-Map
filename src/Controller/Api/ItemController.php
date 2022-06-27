@@ -2,6 +2,7 @@
 
 namespace App\Controller\Api;
 
+use App\Entity\Item;
 use App\Repository\ItemRepository;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
@@ -16,7 +17,7 @@ class ItemController extends AbstractController
 {
     
     /**
-     * Liste des objets
+     * items list
      * @Route("", name="browse", methods={"GET"})
      *
      * @param ItemRepository $itemRepository
@@ -31,6 +32,26 @@ class ItemController extends AbstractController
             Response::HTTP_OK,
             [], //entêtes
             ["groups" => "browse_items"
+        ]);
+    }
+
+    /**
+     * Read a specific item with id
+     * @Route("/{id}", name="read", methods={"GET"}, requirements={"id":"\d+"})
+     *
+     * @param Item $item
+     * @return JsonResponse
+     */
+    public function read(Item $item = null): JsonResponse
+    {
+        if ($item === null){
+            return $this->json("L'objet recherché n'a pas été trouvé", Response::HTTP_NOT_FOUND);
+        }
+        return $this->json(
+            $item,
+            Response::HTTP_OK,
+            [],
+            ["groups" => "read_item"
         ]);
     }
 }

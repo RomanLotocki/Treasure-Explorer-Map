@@ -19,5 +19,5 @@
 .phpunit.result.cache
 ###< phpunit/phpunit ###
 
-### initial user fixtures ignore ###
-/src/DataFixtures/
+# initial user fixtures ignore ###
+UserFixtures.php

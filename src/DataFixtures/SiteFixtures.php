@@ -21,6 +21,17 @@ class SiteFixtures extends Fixture
         $site->setSiteUrl("https://www.todaiji.or.jp/en/");
         $manager->persist($site);
 
+        $site = new Site();
+        $site->setName("Machu Pichu");
+        $site->setImage("https://upload.wikimedia.org/wikipedia/commons/thumb/b/b5/Daibutsu-den_in_Todaiji_Nara01bs3200.jpg/1280px-Daibutsu-den_in_Todaiji_Nara01bs3200.jpg");
+        $site->setSiteDescription("Machu Picchu (du quechua machu pikchu, littéralement « vieille montagne » ou « vieux sommet »)est une ancienne cité inca du XVe siècle au Pérou, perchée sur un promontoire rocheux qui unit les monts Machu Picchu et Huayna Picchu (« le Jeune Pic » en quechua) sur le versant oriental des Andes centrales. Son nom aurait été Pikchu ou Picho.");
+        $site->setSiteCulture("Incas");
+        $site->setSiteCountry("Pérou");
+        $site->setSiteLatitude(-13.163464);
+        $site->setSiteLongitude(-72.545138);
+        $site->setSiteUrl("https://www.todaiji.or.jp/en/");
+        $manager->persist($site);
+
         $manager->flush();
     }
 }

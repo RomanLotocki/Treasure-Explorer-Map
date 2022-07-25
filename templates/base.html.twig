@@ -28,9 +28,11 @@
                             <li class="nav-item">
                                 <a class="nav-link {{ controller_name is same as "MainController" ? "active" : "" }}" href="{{ path('app_admin_home') }}">Accueil</a>
                              </li>
+                             {% if is_granted('ROLE_SUPERADMIN') %}
                              <li class="nav-item">
                                 <a class="nav-link {{ controller_name is same as "UserController" ? "active" : "" }}" href="{{ path('app_user_index') }}">Utilisateurs</a>
                             </li>
+                            {% endif %}
                             <li class="nav-item">
                                 <a class="nav-link {{ controller_name is same as "ItemController" ? "active" : "" }}" href="{{ path('app_item_index') }}">Objets</a>
                             </li>
